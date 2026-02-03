@@ -19,12 +19,10 @@ const sortedArrayToBST = function(nums) {
         if (left > right) {
             return null;
         }
-        
-        // Choose the middle element as root to maintain balance
+
         let mid = Math.floor((left + right) / 2);
         let node = new TreeNode(nums[mid]);
-        
-        // Recursively build left and right subtrees
+
         node.left = buildBST(left, mid - 1);
         node.right = buildBST(mid + 1, right);
         
